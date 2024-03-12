@@ -19,6 +19,11 @@
     do same to pass v-model to components
 
     <custom :model-value='inputText' @update:model-value="inputText = $event"></custom>
+
+    App.component('custom', {
+      props: ['modelValue'],
+      template: `<input :value="modelValue" @input="$emit('update:modalValue', $event.target.value)" />`
+    })
    -->
 
   
