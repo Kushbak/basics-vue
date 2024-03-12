@@ -51,8 +51,8 @@
       </div>
       <div class="products__container">
         <template v-for="product in filteredProducts" :key="product.id">
-          <div
-            class="products__item">
+          <!-- <product-item v-bind="product"></product-item> -->
+          <div class="products__item">
             <p>{{ product.name }} ${{ product.price }}</p>
             <p>Category - {{ product.category }}</p>
             <p v-if="filters.withDescription">Description - {{ product.description }}</p>
@@ -79,7 +79,6 @@
 </template>
 
 <script>
-
 const products = [
   {
     "id": 1,
@@ -201,6 +200,22 @@ export default {
     }
   }
 }
+
+// ! moved to main.js
+// const App = createApp(app)
+
+// App.component('product-item', {
+//   props: ['product'],
+//   template: `<div
+//     class="products__item">
+//     <p>{{ product.name }} $\{{ product.price }}</p>
+//     <p>Category - {{ product.category }}</p>
+//     <p v-if="filters.withDescription">Description - {{ product.description }}</p>
+//   </div>`
+// })
+
+// export default App
+
 </script>
 
 <style>
