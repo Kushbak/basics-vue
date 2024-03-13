@@ -74,11 +74,20 @@
       <!-- there is also key events with modifiers @keyevent -->
       <input type="text" @keypress="handleKeyEvent" placeholder="ctrl + enter">
     </div>
+    <events-component></events-component>
+  </div>
+
+  <div>
+    <h2>Slots</h2>
+    <slots-component></slots-component>
   </div>
 
 </template>
 
 <script>
+import SlotsComponent from './components/Slots/SlotsComponent'
+import EventsComponent from './components/Events/EventsComponent'
+
 const products = [
   {
     "id": 1,
@@ -198,6 +207,10 @@ export default {
       console.log('on ctrl space', e)
       e.target.value = 'asadsasd'
     }
+  },
+  components: {
+    SlotsComponent,
+    EventsComponent,
   }
 }
 
